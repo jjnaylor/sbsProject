@@ -3,8 +3,12 @@ package com.jjnaylo;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="employeeRecord")
 
 public class EmployeeRecord {
+	
 	@Id private String id;
 	
 	private String firstName;
