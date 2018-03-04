@@ -1,0 +1,45 @@
+<table>
+  <tr>
+    <!--<th>Employee ID</th>-->
+    <th></th>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Middle Initial</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Position</th>
+    <th>Hire Date</th>
+    <th>Address 1</th>
+    <th>Address 2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Active?</th>
+  </tr>
+  <tr *ngFor="let employee of employees">
+    <!--<td>{{employee.id}}</td>-->
+    <td>
+      <span class="employee-actions">
+        <a (click)="editEmployee(employee)">
+          <i class="material-icons edit">edit</i>
+        </a>
+        <a (click)="deleteEmployee(employee.id)">
+          <i class="material-icons delete">delete</i>
+        </a>
+      </span>
+    </td>
+    <td>{{employee.lastName}}</td>
+    <td>{{employee.firstName}}</td>
+    <td>{{employee.middleInitial}}.</td>
+    <td>{{employee.emailAddress}}</td>
+    <td>{{employee.phoneNum}}</td>
+    <td>{{employee.positionCat}}</td>
+    <td>{{employee.hireDate | date: 'MM/dd/yyyy'}}</td>
+    <td>{{employee.address1}}</td>
+    <td>{{employee.address2}}</td>
+    <td>{{employee.city}}</td>
+    <td>{{employee.state}}</td>
+    <td>{{employee.zip}}</td>
+    <td>{{employee.active}}</td>
+  </tr>
+</table>
