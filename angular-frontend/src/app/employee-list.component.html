@@ -1,20 +1,85 @@
 <div class="employee-content">
   <h1 class="page-title">Employee List</h1>
-  <div class="employee-create">
+  <!--<div class="employee-create">
+    <button type="button" class="btn btn-default" (click)="addNewEmployeeDialog()">New Employee</button>
     <form #employeeForm="ngForm" novalidate>
       <input type="text" id="firstName" class="form-control" placeholder="First Name" required name="firstName"
              [(ngModel)]="newEmployee.firstName"
-             #firstName="ngModel">
+             #firstName="ngModel">*
       <div *ngIf="firstName.errors && firstName.dirty" class="alert alert-danger">
         <div [hidden] ="!firstName.errors.required">First Name is required.</div>
       </div>
-      <!--<button type="button" class="btn btn-default" (click)="createEmployee(employeeForm)">Add Employee</button>-->
+      <br/>
+      <input type="text" id="lastName" class="form-control" placeholder="Last Name" required name="lastName"
+             [(ngModel)]="newEmployee.lastName"
+             #lastName="ngModel">*
+      <div *ngIf="lastName.errors && lastName.dirty" class="alert alert-danger">
+        <div [hidden] ="!lastName.errors.required">Last Name is required.</div>
+      </div>
+      <br/>
+      <input type="text" id="middleInitial" class="form-control" placeholder="Middle Initial" name="middleInitial"
+             [(ngModel)]="newEmployee.middleInitial"
+             #middleInitial="ngModel">
+      <br/>
+      <input type="text" id="emailAddress" class="form-control" placeholder="Email Address" required name="emailAddress"
+             [(ngModel)]="newEmployee.emailAddress"
+             #emailAddress="ngModel">*
+      <div *ngIf="emailAddress.errors && emailAddress.dirty" class="alert alert-danger">
+        <div [hidden] ="!emailAddress.errors.required">Email Address is required.</div>
+      </div>
+      <br/>
+      <input type="text" id="phoneNum" class="form-control" placeholder="Phone Number" name="phoneNum"
+             [(ngModel)]="newEmployee.phoneNum"
+             #phoneNum="ngModel">
+      <br/>
+      <input type="text" id="positionCat" class="form-control" placeholder="Position" required name="positionCat"
+             [(ngModel)]="newEmployee.positionCat"
+             #positionCat="ngModel">*
+      <div *ngIf="positionCat.errors && positionCat.dirty" class="alert alert-danger">
+        <div [hidden] ="!positionCat.errors.required">Position is required.</div>
+      </div>
+      <br/>
+      <input type="date" id="hireDate" class="form-control" placeholder="Hire Date" required name="hireDate"
+             [(ngModel)]="newEmployee.hireDate"
+             #hireDate="ngModel">*
+      <div *ngIf="hireDate.errors && hireDate.dirty" class="alert alert-danger">
+        <div [hidden] ="!hireDate.errors.required">Hire Date is required.</div>
+      </div>
+      <br/>
+      <input type="text" id="address1" class="form-control" placeholder="Address Line 1" name="address1"
+             [(ngModel)]="newEmployee.address1"
+             #address1="ngModel">
+      <br/>
+      <input type="text" id="address2" class="form-control" placeholder="Address Line 2 (optional)" name="address2"
+             [(ngModel)]="newEmployee.address2"
+             #address2="ngModel">
+      <br/>
+      <input type="text" id="city" class="form-control" placeholder="City" name="city"
+             [(ngModel)]="newEmployee.city"
+             #city="ngModel">
+      <br/>
+      <input type="text" id="state" class="form-control" placeholder="State" name="state"
+             [(ngModel)]="newEmployee.state"
+             #state="ngModel">
+      <br/>
+      <input type="text" id="zip" class="form-control" placeholder="Zip Code" name="zip"
+             [(ngModel)]="newEmployee.zip"
+             #zip="ngModel">
+      <br/>
+      <input type="radio" id="activeTrue" value="true" name="activeTrue"
+             [(ngModel)]="newEmployee.active"
+             #active="ngModel">Active Employee
+      <input type="radio" id="activeFalse" value="false" name="activeFalse"
+             [(ngModel)]="newEmployee.active"
+             #active="ngModel">Non-Active Employee
+      <br/>
+      <button type="button" class="btn btn-default" (click)="createEmployee(employeeForm)">Add Employee</button>
     </form>
-  </div>
+  </div>-->
   <table>
     <tr>
-      <!--<th>Employee ID</th>-->
       <th></th>
+      <th>Employee ID</th>
       <th>Last Name</th>
       <th>First Name</th>
       <th>Middle Initial</th>
@@ -30,17 +95,17 @@
       <th>Active?</th>
     </tr>
     <tr *ngFor="let employee of employees">
-      <!--<td>{{employee.id}}</td>-->
       <td>
         <span class="employee-actions">
-          <a (click)="editEmployee(employee)">
+          <!--<a (click)="editEmployee(employee)">
             <i class="material-icons edit">edit</i>
-          </a>
+          </a>-->
           <a (click)="deleteEmployee(employee.id)">
             <i class="material-icons delete">delete</i>
           </a>
         </span>
       </td>
+      <td>{{employee.id}}</td>
       <td>{{employee.lastName}}</td>
       <td>{{employee.firstName}}</td>
       <td>{{employee.middleInitial}}.</td>
@@ -66,9 +131,6 @@
         <span class="employee-actions">
           <a (click)="editEmployee(employee)">
             <i class="material-icons edit">edit</i>
-          </a>
-          <a (click)="deleteEmployee(employee.id)">
-            <i class="material-icons delete">delete</i>
           </a>
         </span>
       </div>

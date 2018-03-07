@@ -9,7 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 public class EmployeeRecord {
 	
-	@Id private String id;
+	@Id
+	private String id;
 	
 	private String firstName;
 	private String lastName;
@@ -45,6 +46,14 @@ public class EmployeeRecord {
 		this.state = state;
 		this.zip = zip;
 		this.active = active;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 	public String getFirstName() {

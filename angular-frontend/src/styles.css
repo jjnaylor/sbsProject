@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.58;
   background: #d53369;
-  background: -webkit-linear-gradient(to left, #cbad6d, #d53369);
-  background: linear-gradient(to left, #cbad6d, #d53369);
+  background: -webkit-linear-gradient(to right, #041E42, #fff);
+  background: linear-gradient(to right, #041E42, #fff);
   color: #333;
 }
 
@@ -31,7 +31,7 @@ input {
 }
 
 .employee-content {
-  max-width: 900px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
   margin-top: 60px;
@@ -41,7 +41,7 @@ input {
 }
 
 .form-control {
-  font-size: 16px;
+  font-size: 12px;
   padding-left: 15px;
   outline: none;
   border: 1px solid #E8E8E8;

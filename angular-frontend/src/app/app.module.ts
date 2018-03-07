@@ -19,6 +19,7 @@ import {EmployeeService} from './employee.service';
     FormsModule,
     HttpModule
   ],
+
   providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
